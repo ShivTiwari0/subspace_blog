@@ -38,12 +38,12 @@ class _SplashScreenState extends State<SplashScreen> {
       listener: (context, state) {
         gotoNextScreen();
       },
-      child:  AnimatedSplashScreen(
+      child:  AnimatedSplashScreen(duration:10000 ,
         splash: Center(
           child: Lottie.asset(
               'assets/animated/Animation - 1722927455635.json', fit: BoxFit.fitHeight),
         ),
-       nextScreen: const LandingBlogScreen(),
+       nextScreen: const SizedBox(),//because CubitState is handling navigation
         
         ));
   } 

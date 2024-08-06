@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:subspace_blog/core/extension.dart';
 import 'package:subspace_blog/core/ui.dart';
 
 import 'package:subspace_blog/logic/cubits/favorite_cubit/favorite_cubit.dart';
@@ -34,9 +35,12 @@ class FavoriteBlogsScreen extends StatelessWidget {
                       arguments: blog);
                 },
                   title: Text(blog.title ?? 'No Title', style: TextStyles.body2, ),
-                  leading: blog.imageUrl != null
-                      ? CachedNetworkImage(imageUrl: blog.imageUrl!,)
-                      : null,trailing: Icon(Icons.menu,color: AppColors.lightGreyTextColor,),
+                  leading: SizedBox(width: context.width()*0.3,
+                    child: blog.imageUrl != null
+                        ? CachedNetworkImage(imageUrl: blog.imageUrl!,)
+                        : null,
+                  ),
+                      trailing: Icon(Icons.menu,color: AppColors.lightGreyTextColor,),
                      
                 );
               },
