@@ -36,11 +36,8 @@ class FavoriteBlogsScreen extends StatelessWidget {
                   title: Text(blog.title ?? 'No Title', style: TextStyles.body2, ),
                   leading: blog.imageUrl != null
                       ? CachedNetworkImage(imageUrl: blog.imageUrl!,)
-                      : null,
-                  trailing: Icon(
-                    blog.isFavorite ? Icons.favorite : Icons.favorite,
-                    color: blog.isFavorite ? Colors.red : Color.fromARGB(255, 199, 99, 99),
-                  ),
+                      : null,trailing: Icon(Icons.menu,color: AppColors.lightGreyTextColor,),
+                     
                 );
               },
             );
